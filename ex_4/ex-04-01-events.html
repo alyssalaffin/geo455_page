@@ -23,8 +23,9 @@
         method to add many events on the same button.</h3>
     <button id="myBtn3">Try it!!</button>
     <p id="demo3"></p>
-
-
+    
+    <button id="example-button">You have not clicked this button.</button>
+    <button id="reset-button">Click this button to reset the first button.</button>
 
 <script>
     
@@ -62,6 +63,38 @@
         document.getElementById("demo3").innerHTML += "Moused out!<br>";
     }
     
+    const buttonToBeClicked = document.getElementById("example-button");
+
+const resetButton = document.getElementById("reset-button");
+
+const initialText = buttonToBeClicked.textContent;
+
+const clickedText = "You have clicked this button.";
+
+function eventListener() {
+  buttonToBeClicked.textContent = clickedText;
+}
+
+function addListener() {
+  buttonToBeClicked.addEventListener(
+    "click",
+    eventListener,
+    {
+      passive: true,
+      once: true
+    }
+  );
+}
+
+resetButton.addEventListener(
+  "click",
+  () => {
+    buttonToBeClicked.textContent = initialText;
+    addListener();
+  }
+);
+
+addListener();
     
 </script>
 

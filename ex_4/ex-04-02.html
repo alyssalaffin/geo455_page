@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Earth poles</title>
+        <title>Earth poles and Equator</title>
     </head>
     <body>
-        <h2>Earth Poles Viewer</h2>
+        <h2>Earth Poles and Equator Viewer</h2>
         <img id="myImage" src="images/north.svg"><br>
         <input type="button" value="North Pole" id="north">
         <input type="button" value="South Pole" id="south">
+        <input type="button" value="Equator" id="equator">
         <script>
             function showNorth() {
                 document
@@ -19,7 +20,11 @@
                     .getElementById("myImage")
                     .src = "images/south.svg";
             }
-            
+             function showEquator() {
+                document
+                    .getElementById("myImage")
+                    .src = "images/equator.svg";
+            }
             document
                 .getElementById("north")
                 .addEventListener("click", showNorth);
@@ -27,6 +32,10 @@
             document
                 .getElementById("south")
                 .addEventListener("click", showSouth);
+            
+             document
+                .getElementById("equator")
+                .addEventListener("click", showEquator);
         </script>
     </body>
 </html>
