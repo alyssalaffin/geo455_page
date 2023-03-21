@@ -86,25 +86,23 @@ function onEachFeature(feature, layer) {
 
 //New Map
 
-function getColor1(value) {
-    return value > 47 ? '#ff1a8c':
-           value > 30 ? '#ff4da6':
-           value > 17 ? '#ff80bf':
-           value > 13 ? '#ffb3d9':
-           value > 11 ? '#ffe6f2':
-                         '#f2f0f7';
+function getColor1(value1) {
+    return value1 > 47 ? '#ff1a8c':
+           value1 > 30 ? '#ff4da6':
+           value1 > 17 ? '#ff80bf':
+           value1 > 13 ? '#ffb3d9':
+           value1 > 11 ? '#ffe6f2':
+                        '#f2f0f7';
 }
-
 function style1(feature){
     return {
-        fillColor: getColor1(feature.properties.den),   
+        fillColor: getColor1(feature.properties.density),   
         weight: 2,
         opacity: 1,
         color: 'gray',
         fillOpacity: 0.9
     };
 }
-
 function highlightFeature1(e1) {
     var feature = e1.target;
 
@@ -136,9 +134,9 @@ function resetHighlight1(e1) {
 density = L.geoJson(density, {
     style:style1,
     onEachFeature: onEachFeature1
-}).bindPopup(function (layer1){
-    return layer1.feature.properties.name
-           + '<p style="color:purple">' + layer1.feature.properties.den.toString() + ' people/hectare </p>';       
+}).bindPopup(function (layer){
+    return layer.feature.properties.name
+           + '<p style="color:purple">' + layer.feature.properties.density.toString() + ' people/hectare </p>';       
 }).addTo(mymap);
 
 var legend1 = L.control({position: 'bottomleft'});
