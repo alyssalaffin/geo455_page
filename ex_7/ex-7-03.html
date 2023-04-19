@@ -42,6 +42,17 @@ var marker =
     .bindPopup("This marker is draggable! Move it around...")
     .addTo(mymap)
     .openPopup();
+
+var marker =
+    L.marker ([43.97, -89.813], {draggable: true})
+    .bindPopup("This marker is placed in my hometown and you can move it around!")
+    .addTo(mymap)
+    .openPopup();
+        
+L.marker([37.91, -104.042], {draggable: true})
+    .bindPopup("This marker is draggable! Move it around...")
+    .addTo(mymap)
+    .openPopup();   
     
 // Print current position
 marker.addEventListener("drag", function() {

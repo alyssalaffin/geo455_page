@@ -38,7 +38,7 @@ L.tileLayer(
 
         
 var taco = L.icon({
-    iconUrl: 'img/taco.png',
+    iconUrl: 'img/icecream.png',
     iconSize: [30, 30],
     iconAnchor: [0, 0],
 });
@@ -53,10 +53,9 @@ var me = L.icon({
 // Add random points
 var targetPoint = turf.point([-91.23176163704308, 43.81594921072007], {"marker-color": "#0F0"});
 var points = turf.featureCollection([
-    turf.point([-91.23936969689734, 43.81680581566446]),
-    turf.point([-91.23932097132852, 43.817786255647775]),
-    turf.point([ -91.22887096966582, 43.81261677078325]),
-    turf.point([ -91.23939169368956, 43.814414585537016,])
+    turf.point([-91.232830, 43.804239]),
+    turf.point([-91.254172, 43.812369]),
+    turf.point([ -91.251086, 43.812850])
 ]);
 
 var nearest = turf.nearestPoint(targetPoint, points);
