@@ -30,7 +30,7 @@
                text-align: center;
                color: aliceblue;
            }
-           .button {
+           .btn {
                background-color: rgb(179, 217, 255); 
                border: 1px solid black;
                color: black;
@@ -104,10 +104,10 @@
        </div>
     
            <div id="leftmenu">
-               <button id="btn1" class="button">Show Legend</button>
-               <button id="btn2" class="button">Hide Legend</button>
-               <button id="btn3" class="button">Show about map</button>
-               <button id="btn4" class="button">Hide about map</button>
+        <input type="button" value="Hide" class="btn" onclick="hide()">
+        <input type="button" value="Show" class="btn" onclick="show()">
+        <input type="button" value="Pause" class="btn" onclick="pause()">
+        <input type="button" value="Play" class="btn" onclick="play()">
            </div>
             <div id= "splasher1" class="hidden">
                 <h2>Legend</h2>
