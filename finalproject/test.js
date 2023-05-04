@@ -69,26 +69,6 @@ function show_imm(){
     migrationLayer2.show();
 }
 
-// Create menu items
-var baseLayers = {
-    'Grayscale': grayscale,
-    'Streets': streets,
-	};
-
-//ledgend
-var overlays = {
-    'Coal Exports(Blue)': migrationLayer,
-    'Coal Imports(Blue)':migrationLayer2,
-    'Gas Exports(Green)':cities,
-};
-var layerControl = L.control.layers(baseLayers, overlays , {collapsed: false}).addTo(mymap); //collapsed: true is defaults
-
-//Create locator map
-var miniMap = new L.Control.MiniMap(L.tileLayer('https://api.maptiler.com/maps/topo/{z}/{x}/{y}.png?key=tZnptaeI9RvKHsX18rbW'), {
-    toggleDisplay: true,
-    minimized: true,
-    position: 'bottomright'
-}).addTo(mymap)
 
 //Pop-up for showing XY coordinates on map
 //// Create an empty popup
