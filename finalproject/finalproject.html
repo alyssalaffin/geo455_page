@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>geo455_test</title>
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+        <script src="https://lycheelin.github.io/leaflet.migrationLayer/src/src.js"></script>
+        <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.js'></script>
+        
+        <script src="emi.js"></script>
+        <script src="imm.js"></script>
+        <script src="city_poly.js"></script>
+        
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: "whitesmoke";
+                font-family: "Noto Sans", sans-serif;
+                color: #3d3d3d;
+            }
+            #title {
+                position: fixed;
+                margin-top: 0;
+                top: 10px;
+                left: 80px;
+                font-size: 1.8em;
+                font-family: "Lora", serif;
+                color: white;
+                letter-spacing: .04em;
+                padding: 15px 20px;
+                background-color: rgba(153, 51, 51);
+                border: 1px solid grey;
+                border-radius: 3px;
+                z-index: 800;
+            }
+            #description h2 {
+                font-family: "Lora", serif;
+                letter-spacing: .04em;
+            }
+            #map {
+                position:absolute;
+                top: 0;
+                bottom: 0;
+                width: 100%;
+            }
+            .custom .leaflet-popup-tip,
+            .custom .leaflet-popup-content-wrapper {
+                background: #000000;
+                color: #ffffff;
+            }
+            #description {
+                position: fixed;
+               bottom: 10px;
+               left: 10px;
+               width: 280px;
+               padding: 0px 15px;
+               background-color: rgba(255, 255, 255, 0.8);
+               border: 1px solid grey;
+               border-radius: 3px;
+               z-index: 800;
+            }
+            #description p {
+                font-size: .9em;
+                line-height: 1.5em;
+            }
+            #description a {
+                color: #005daa;
+                text-decoration: none;
+            }
+            #description a:hover {
+                text-decoration: underline;
+            }
+            #event{
+                position: absolute;
+                top: 50px;
+                right: 600px;
+                height: 100px;
+                width: 400px;
+                z-index: 10000;
+            }
+            .btn{
+                border-color:gray;
+                border-width: 1px;
+                background-color:white;
+           }
+        </style>
+    </head>
+    <body>
+        <h1 id="title">Global Movement</h1>
+        <div id="map"></div>
+        <div id='event'>
+        <input type="button" value="Hide Emigration" class="btn" onclick="hide_emi()">
+        <input type="button" value="Show Emigration" class="btn" onclick="show_emi()">
+        <input type="button" value="Hide Immigration" class="btn" onclick="hide_imm()">
+        <input type="button" value="Show Immigration" class="btn" onclick="show_imm()">
+    </div>
+        <div id="description">
+            <h2> About the Map</h2>
+            <p>This map displays the the top 20 countries U.S citizens emigrate to in terms of number of people as well as the top 20 countries the U.S. recieves the most immigrants from. In addition, the top 10 locations where immigrants settle within the U.S. is also highlighted. </p>
+            <p style="text-align:center; font-style: italic ">Map Developer: Alyssa Laffin </p>
+        </div>
+        <script src="test.js"></script>
+    </body>
+</html>
